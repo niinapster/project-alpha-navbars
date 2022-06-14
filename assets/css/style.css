@@ -1,0 +1,126 @@
+/* Removes all defaut spacing(margin and padding from html document) */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+    font-family: 'Poppins',sans-serif;
+}
+
+.logo a{
+    color: rgb(230, 230, 230);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.navLinks{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.navLinks a{
+    color: rgb(230, 230, 230);
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navLinks li{
+    list-style: none;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color:rgb(230, 230, 230);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/*Hero Section*/
+.hero{
+    display: flex;
+    background-color: #d2d7c2;
+    height: 92vh;
+}
+
+
+
+/*For mobile screen breakpoint*/
+
+/*For tablet breakpoint*/
+@media screen and (max-width:1024px) {
+    .navLinks{
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+    
+}
+
+/*For Phone breakpoint*/
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+  .navLinks{
+      position: absolute;
+      right: 0px;
+      height:92vh;
+      top: 8vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      background-color: #5d4954;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+  }
+  .navLinks li{
+      opacity: 0;
+  }
+  .burger{
+      display: block;
+      /* position: absolute;
+      right: 0px;
+      padding-right: 20px; */
+    }
+  .navActive{
+      transform:translateX(0%)
+  } 
+
+  /* Animation for Navlinks */
+  @keyframes navLinkFade{
+      from{
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(10px);
+        
+      }
+  }
+}
+ .toggle .line1{
+     transform: rotate(-45deg) translate(-5px,6px);
+ }
+ .toggle .line2{
+     opacity:0;
+ }
+ .toggle .line3{
+     transform:rotate(45deg) translate(-5px,-6px);
+ }
+}
